@@ -1,0 +1,10 @@
+^C:\USERS\JDANH\OPENCV\OPENCV_COURSE\C_CODE\TEST_CODE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jdanh/opencv/opencv_course/c_code/test_code -BC:/Users/jdanh/opencv/opencv_course/c_code/test_code/build --check-stamp-file C:/Users/jdanh/opencv/opencv_course/c_code/test_code/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

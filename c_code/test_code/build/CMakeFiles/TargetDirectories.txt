@@ -1,0 +1,3 @@
+C:/Users/jdanh/opencv/opencv_course/c_code/test_code/build/CMakeFiles/sampleCode.dir
+C:/Users/jdanh/opencv/opencv_course/c_code/test_code/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/jdanh/opencv/opencv_course/c_code/test_code/build/CMakeFiles/ZERO_CHECK.dir
