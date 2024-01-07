@@ -17,7 +17,6 @@ func ManipulatingPixels() {
 	for x := 0; x < 7; x++ {
 		for y := 0; y < 5; y++ {
 			bgr[0].SetUCharAt(y, x, 128)
-
 		}
 	}
 	gocv.Merge(bgr, &testImage)
