@@ -11,4 +11,5 @@ func main() {
 	w1lib.ImageAsAMatrix()
 	w1lib.ManipulatingPixels()
 	w1lib.ManipulatingGroupOfPixels()
+	w1lib.Image_Channels()
 }
