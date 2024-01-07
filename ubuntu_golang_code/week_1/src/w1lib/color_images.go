@@ -6,8 +6,6 @@ import (
 	"gocv.io/x/gocv"
 )
 
-const DATA_PATH = "../data/"
-
 func Color_images() {
 	// Path of the image to be loaded
 	// Here we are supplying a relative path
