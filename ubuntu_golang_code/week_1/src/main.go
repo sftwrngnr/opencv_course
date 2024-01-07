@@ -8,4 +8,5 @@ func main() {
 	w1lib.Color_images()
 	w1lib.ImageAsAMatrix()
 	w1lib.ManipulatingPixels()
+	w1lib.ManipulatingGroupOfPixels()
 }
