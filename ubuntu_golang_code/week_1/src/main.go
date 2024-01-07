@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	w1lib.ImageAsAMatrix()
 	w1lib.Color_images()
+	w1lib.ImageAsAMatrix()
+	w1lib.ManipulatingPixels()
 }
