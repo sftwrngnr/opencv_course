@@ -15,6 +15,7 @@ func ImagesWithAlphaChannel() {
 	gocv.CvtColor(img, &imgRgb, gocv.ColorBGRToRGB)
 
 	window := gocv.NewWindow("Color Image with RGB from BGR")
+	defer window.Close()
 	window.IMShow(imgRgb)
 
 	for {
@@ -23,6 +24,4 @@ func ImagesWithAlphaChannel() {
 			break
 		}
 	}
-	window.Close()
-
 }

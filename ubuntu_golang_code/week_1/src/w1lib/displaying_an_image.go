@@ -13,6 +13,7 @@ func Displaying_an_Image() {
 	img := gocv.IMRead(imageFile, 0)
 	gocv.IMWrite("results/testImage.png", img)
 	window := gocv.NewWindow("Color Image")
+	defer window.Close()
 	window.IMShow(img)
 
 	for {
@@ -21,5 +22,4 @@ func Displaying_an_Image() {
 			break
 		}
 	}
-	window.Close()
 }

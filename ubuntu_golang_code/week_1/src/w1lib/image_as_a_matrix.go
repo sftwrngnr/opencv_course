@@ -18,6 +18,7 @@ func ImageAsAMatrix() {
 	fmt.Printf("Image Dimensions = %d x %d\n", testImage.Rows(), testImage.Cols())
 
 	window := gocv.NewWindow("Image as a Matrix")
+	defer window.Close()
 	window.IMShow(testImage)
 
 	for {
@@ -26,6 +27,4 @@ func ImageAsAMatrix() {
 			break
 		}
 	}
-	window.Close()
-
 }

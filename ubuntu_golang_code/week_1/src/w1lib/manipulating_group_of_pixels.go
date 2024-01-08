@@ -23,6 +23,7 @@ func ManipulatingGroupOfPixels() {
 
 	PrintImageChannelValues(&testImage)
 	window := gocv.NewWindow("Image as a Matrix")
+	defer window.Close()
 	window.IMShow(testImage)
 
 	for {
@@ -31,6 +32,4 @@ func ManipulatingGroupOfPixels() {
 			break
 		}
 	}
-	window.Close()
-
 }

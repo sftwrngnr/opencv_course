@@ -12,6 +12,7 @@ func Intro() {
 	// Read the image
 	img := gocv.IMRead(imageFile, gocv.IMReadColor)
 	window := gocv.NewWindow("Boy")
+	defer window.Close()
 	window.IMShow(img)
 
 	for {
@@ -20,5 +21,4 @@ func Intro() {
 			break
 		}
 	}
-	window.Close()
 }

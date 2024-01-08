@@ -15,6 +15,7 @@ func Color_images() {
 	img := gocv.IMRead(imageFile, gocv.IMReadColor)
 	fmt.Printf("image Dimension ={%d x %d}\n", img.Rows(), img.Cols())
 	window := gocv.NewWindow("Color Image")
+	defer window.Close()
 	window.IMShow(img)
 
 	for {
@@ -23,5 +24,4 @@ func Color_images() {
 			break
 		}
 	}
-	window.Close()
 }
