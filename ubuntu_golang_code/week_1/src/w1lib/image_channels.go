@@ -10,11 +10,25 @@ func Image_Channels() {
 	imageFile := DATA_PATH + "/images/musk.jpg"
 
 	// Read the image
-	img := gocv.IMRead(imageFile, gocv.IMReadColor)
+	img := gocv.IMRead(imageFile, gocv.IMReadAnyColor)
 	imgRgb := img.Clone()
 	gocv.CvtColor(img, &imgRgb, gocv.ColorBGRToRGB)
+	origwin := gocv.NewWindow("Original read")
+	origwin.IMShow(img)
 	window := gocv.NewWindow("Color Image with RGB from BGR")
+	defer window.Close()
 	window.IMShow(imgRgb)
+	// Pull in individual channels
+	bgr := gocv.Split(img)
+	rwin := gocv.NewWindow("Red channel")
+	defer rwin.Close()
+	rwin.IMShow(bgr[0])
+	gwin := gocv.NewWindow("Green channel")
+	defer gwin.Close()
+	gwin.IMShow(bgr[1])
+	bwin := gocv.NewWindow("Blue channel")
+	defer bwin.Close()
+	bwin.IMShow(bgr[2])
 
 	for {
 		c := gocv.WaitKey(20)
@@ -22,6 +36,4 @@ func Image_Channels() {
 			break
 		}
 	}
-	window.Close()
-
 }
