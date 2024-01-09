@@ -15,12 +15,13 @@ func main() {
 		w1lib.ImagesWithAlphaChannel()
 		w1lib.ManipulatingColorPixels()
 		w1lib.SavingAnImage()
+		w1lib.SplittingAndMergingChannels()
 	*/
-	w1lib.SplittingAndMergingChannels()
 
 	// Section 2
+
+	w1lib.CopyingARegionToAnother()
 	/*
-		w1lib.CopyingARegionToAnother()
 		w1lib.CreateNewImages()
 		w1lib.CreatingAnImageMask()
 		w1lib.CroppingAnImageSection()
