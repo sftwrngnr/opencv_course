@@ -20,17 +20,22 @@ func CopyingARegionToAnother() {
 	gocv.WaitKey(0)
 	copiedImage := img.Clone()
 	copywin := gocv.NewWindow("Copied Image")
-	defer copywin.Close()
 	copywin.IMShow(copiedImage)
 	gocv.WaitKey(0)
-	copyroi := copiedImage.Region(image.Rectangle{image.Point{40, 200}, image.Point{180, 320}})
-	dims := copyroi.Size()
-	fmt.Printf("%v\n", dims)
+	copywin.Close()
+	copyroi := copiedImage.Region(image.Rectangle{image.Point{180, 40}, image.Point{320, 180}})
+	fmt.Printf("copyroi: Rows: %d Cols: %d\n", copyroi.Rows(), copyroi.Cols())
 
-	for {
-		c := gocv.WaitKey(20)
-		if c == 27 {
-			break
-		}
-	}
+	myTmp := copiedImage.Region(image.Rectangle{image.Point{40, 10}, image.Point{40 + copyroi.Cols(), 10 + copyroi.Rows()}})
+	fmt.Printf("myTmp: Rows: %d Cols: %d\n", myTmp.Rows(), myTmp.Cols())
+
+	copyroi.CopyTo(&myTmp)
+	myTmp = copiedImage.Region(image.Rectangle{image.Point{330, 10}, image.Point{330 + copyroi.Cols(), 10 + copyroi.Rows()}})
+	copyroi.CopyTo(&myTmp)
+
+	copywin = gocv.NewWindow("New Copied Image")
+	copywin.IMShow(copiedImage)
+	gocv.WaitKey(0)
+	copywin.Close()
+	gocv.IMWrite("results/outputImage.png", copiedImage)
 }
