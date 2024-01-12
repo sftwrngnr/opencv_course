@@ -19,8 +19,11 @@ func main() {
 	*/
 
 	// Section 2
+	/*
 
-	w1lib.CopyingARegionToAnother()
+		w1lib.CopyingARegionToAnother()
+
+	*/
 	w1lib.CreateNewImages()
 	/*
 		w1lib.CreateNewImages()
