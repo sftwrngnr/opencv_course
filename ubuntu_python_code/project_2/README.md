@@ -6,6 +6,6 @@ Prerequisites:
 Instructions:
 To execute the program type the following command:
 python3 submission.py
-The output file will be written to output/face.png
+The output file will be written to output/face.jpg
 If no area is selected, no output file will be created.
 

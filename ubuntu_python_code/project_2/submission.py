@@ -71,7 +71,7 @@ if len(boxPoints) < 2:
     print("No area was selected!")
 else:
     face = dummy[boxPoints[0][1]:boxPoints[1][1],boxPoints[0][0]:boxPoints[1][0]]
-    cv2.imwrite("./output/face.png", face)
+    cv2.imwrite("./output/face.jpg", face)
 cv2.destroyAllWindows()
 
 
