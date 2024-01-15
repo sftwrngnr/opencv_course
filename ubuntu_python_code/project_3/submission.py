@@ -19,10 +19,9 @@ trackbarType = "Type: \n 0: Scale Up \n 1: Scale Down"
 def show_stype(sftype):
     global stp
     global origstp
+    text = "Scale Up"
     stp = origstp.copy()
-    if sftype == False:
-        text = "Scale UP"
-    else:
+    if sftype:
         text = "Scale Down"
     fontScale = 1.5
     fontFace = cv2.FONT_HERSHEY_COMPLEX
@@ -38,10 +37,10 @@ scale_window = "ScalingFactor"
 #stp = cv2.cvtColor(stp, cv2.COLOR_BGR2GRAY)
 cv2.namedWindow(
         scale_window,
-        flags=( cv2.WINDOW_GUI_NORMAL | cv2.WINDOW_FREERATIO | cv2.WINDOW_AUTOSIZE))
+        flags=( cv2.WINDOW_GUI_NORMAL | cv2.WINDOW_AUTOSIZE))
 cv2.moveWindow(scale_window, 640,100)
 # Create a window to display results
-cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE )
 show_stype(False)
 cv2.imshow(scale_window, stp)
 
@@ -51,17 +50,18 @@ def scaleTypeImage(*args):
     global scaleValue
     global scaleFactor
     global scale_window
+    global stp
     scaleType = args[0]
 
     if scaleType == 1:
         scaleFactor = 1 - scaleValue/100.0
     else:
         scaleFactor = 1 + scaleValue/100.0
-    if scaleFactor ==0 :
+    if scaleFactor ==0:
         scaleFactor = 1
     scaledImage = cv2.resize(im, None, fx=scaleFactor,\
             fy = scaleFactor, interpolation = cv2.INTER_LINEAR)
-    show_stype(scaleFactor == 0)
+    show_stype(scaleType == 1)
     cv2.imshow(scale_window, stp)
     cv2.imshow(windowName, scaledImage)
 
@@ -78,7 +78,9 @@ def scaleImage(*args):
         scaleFactor = 1
     scaledImage = cv2.resize(im, None, fx=scaleFactor,\
             fy = scaleFactor, interpolation = cv2.INTER_LINEAR)
+
     cv2.imshow(windowName, scaledImage)
+
 
 cv2.createTrackbar(trackbarValue, windowName, scaleValue, maxScaleUp, scaleImage)
 cv2.createTrackbar(trackbarType, windowName, scaleType, maxType, scaleTypeImage)
