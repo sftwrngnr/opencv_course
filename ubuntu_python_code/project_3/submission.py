@@ -6,7 +6,7 @@ scaleValue = 1
 scaleType = 0
 maxType = 1
 scaleFactor = 1.0
-myShape = (200, 300, 3)
+myShape = (200, 350, 3)
 stp = np.zeros(myShape, dtype=np.uint8)
 stp[:] = (128, 128, 128)
 origstp = stp.copy()
@@ -25,9 +25,9 @@ def show_stype(sftype):
         text = "Scale Down"
     fontScale = 1.5
     fontFace = cv2.FONT_HERSHEY_COMPLEX
-    fontColor = (255, 255, 255)
+    fontColor = (0, 0, 0)
     fontThickness = 2
-    cv2.putText(stp, text, (5, 100), fontFace, fontScale, fontColor, fontThickness, cv2.LINE_AA);
+    cv2.putText(stp, text, (20, 100), fontFace, fontScale, fontColor, fontThickness, cv2.LINE_AA);
 
 
 
